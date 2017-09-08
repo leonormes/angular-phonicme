@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-word-form.component.css']
 })
 export class NewWordFormComponent implements OnInit {
-  addWord(word: HTMLInputElement, file: HTMLInputElement): boolean {
-    console.log(`Adding word: ${word.value} & ${file.value}`);
+  addWord(
+    word: HTMLInputElement,
+    file: HTMLInputElement,
+    meta: HTMLInputElement): boolean {
+    console.log(`Adding word: ${word.value} & ${file.value} & ${meta.value}`);
     return false;
   }
 

@@ -1,29 +1,10 @@
-<div class="four wide column center aligned votes">
-  <div class="ui statistic">
-    <div class="value">
-      {{article.votes}}
+<div class="ui huge aligned divided list">
+  <div class="item">
+    <div class="right floated content">
+      <div class="ui button">Delete</div>
     </div>
-    <div class="label">
-      Points
+    <div class="ui content">
+      {{word}}
     </div>
   </div>
-</div>
-<div class="twelve wide column">
-  <a href="{{link}}" class="ui large header">
-    {{article.title}}
-  </a>
-  <ul class="ui big horizontal list voters">
-    <li class="item">
-      <a href (click)="voteUp()">
-        <i class="arrow up icon"></i>
-        upvote
-      </a>
-    </li>
-    <li class="item">
-      <a href (click)="voteDown()">
-        <i class="arrow down icon"></i>
-        downvote
-      </a>
-    </li>
-  </ul>
 </div>

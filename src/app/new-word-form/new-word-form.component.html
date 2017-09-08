@@ -12,8 +12,14 @@
   <input name="file" #newfile>
 </div>
 
-<button (click)="addWord(newword, newfile)"
+<div class="field">
+  <label for="meta">Meta:</label>
+  <input name="meta" #newmeta>
+</div>
+
+<button (click)="addWord(newword, newfile, newmeta)"
     class="ui positive right floated button">
   Submit Word
   </button>
 </form>
+<app-phonic></app-phonic>
