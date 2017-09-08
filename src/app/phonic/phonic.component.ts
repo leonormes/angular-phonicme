@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-
+import {Phonic} from './phonic.model';
 @Component({
   selector: 'app-phonic',
   templateUrl: './phonic.component.html',
@@ -7,12 +7,14 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 })
 export class PhonicComponent implements OnInit {
     @HostBinding('attr.class') cssClass = 'row';
-    votes: number;
-    word: string;
+    phonic: Phonic;
 
   constructor() {
-    this.word = 'Cat';
-    this.votes = 10;
+    this.phonic = new Phonic(
+      'Cat',
+      'Phase 1',
+      'sounds/cat.mp3'
+    );
   }
 
   ngOnInit() {
