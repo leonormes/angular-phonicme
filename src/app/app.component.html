@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<form class="ui large form segment">
+  <h3 class="ui header">Add word</h3>
+
+<div class="field">
+    <label for="word">Word:</label>
+    <input name="word" #newword>
+</div>
+
+<div class="field">
+  <label for="file">File:</label>
+  <input name="file" #newfile>
+</div>
+
+<button (click)="addWord(newword, newfile)"
+    class="ui positive right floated button">
+  Submit Word
+  </button>
+</form>

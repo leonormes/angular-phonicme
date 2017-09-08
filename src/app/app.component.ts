@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  addWord(word: HTMLInputElement, file: HTMLInputElement): boolean {
+    console.log(`Adding word: ${word.value} & ${file.value}`);
+    return false;
+  }
 }
