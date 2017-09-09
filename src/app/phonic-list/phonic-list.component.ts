@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { Phonic } from '../phonic/phonic.model';
 
 @Component({
   selector: 'app-phonic-list',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phonic-list.component.css']
 })
 export class PhonicListComponent implements OnInit {
+  @Input() phonic: Phonic;
 
   constructor() { }
 
