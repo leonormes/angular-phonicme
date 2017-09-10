@@ -11,10 +11,12 @@ export class AppComponent {
 
   constructor() {
     this.phonics = [
-      new Phonic('Bed', 'bed.mp3', 'phase 1'),
-      new Phonic('Cat', 'cat.mp3', 'phase 1'),
-      new Phonic('Dog', 'dog.mp3', 'phase 1'),
-      new Phonic('Sun', 'sun.mp3', 'phase 1'),
+      new Phonic('Cat', '../assets/audio/cat.mp3', 'phase 2'),
+      new Phonic('Dog', '../assets/audio/cat.mp3', 'phase 1'),
+      new Phonic('Bed', '../assets/audio/cat.mp3', 'phase 2'),
+      new Phonic('Sun', '../assets/audio/cat.mp3', 'phase 3'),
+      new Phonic('Run', '../assets/audio/cat.mp3', 'phase 2'),
+      new Phonic('So', '../assets/audio/cat.mp3', 'phase 2, tricky'),
     ];
   }
 

@@ -8,7 +8,7 @@ import {Phonic} from '../phonic.model';
 })
 export class PhonicWordComponent implements OnInit {
   @Input() phonic: Phonic;
-  @HostBinding('attr.class') cssClass = 'ui huge content'
+  @HostBinding('attr.class') cssClass = 'ui huge header'
 
   constructor() { }
 
