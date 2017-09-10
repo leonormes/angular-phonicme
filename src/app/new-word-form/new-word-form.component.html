@@ -1,24 +1,25 @@
+<div class="ui raised segment">
+  <h2 class="ui header">New Phonic:</h2>
 
-<form class="ui large form segment">
-  <h3 class="ui header">Add word</h3>
+  <form [formGroup]="wordForm"
+        (ngSubmit)="onSubmit(wordForm.value)"
+        class="ui form"
+        [class.error]="!wordForm.valid && wordForm.touched" >
 
-<div class="field">
-    <label for="word">Word:</label>
-    <input name="word" #newword>
+        <div class="field"
+          [class.error]="!word.valid && word.touched">
+          <label for="word">Word:</label>
+          <input type="text"
+          id="wordInput"
+          placeholder="New Word"
+          [formControl]="word">
+
+          <div *ngIf="!word.valid"
+          class="ui error message">Word is not valid</div>
+        </div>
+        <div *ngIf="!wordForm.valid"
+        class="ui error message">Form is not valid</div>
+
+        <button type="submit" class="ui button">Submit</button>
+      </form>
 </div>
-
-<div class="field">
-  <label for="file">File:</label>
-  <input name="file" #newfile>
-</div>
-
-<div class="field">
-  <label for="meta">Meta:</label>
-  <input name="meta" #newmeta>
-</div>
-
-<button
-    class="ui positive right floated button">
-  Submit Word
-  </button>
-</form>

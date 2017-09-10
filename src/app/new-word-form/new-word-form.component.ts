@@ -1,18 +1,28 @@
-import { Input, Component, OnInit } from '@angular/core';
-import { Phonic } from "../phonic.model";
-import { AppComponent } from "../app.component";
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-new-word-form',
+  selector: 'new-word-form',
   templateUrl: './new-word-form.component.html',
   styleUrls: ['./new-word-form.component.css']
 })
 export class NewWordFormComponent implements OnInit {
-    @Input() phonic: Phonic;
+  wordForm: FormGroup;
+  word: AbstractControl;
 
-  constructor() { }
+  constructor(fb: FormBuilder) {
+    this.wordForm = fb.group({
+      'word': ['', Validators.required]
+    });
+
+    this.word = this.wordForm.controls['word']
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: string): void {
+    console.log('you submitted: ', form)
   }
 
 }
