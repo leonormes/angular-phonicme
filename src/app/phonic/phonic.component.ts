@@ -1,5 +1,5 @@
 import { Input, Component, OnInit, HostBinding } from '@angular/core';
-import {Phonic} from './phonic.model';
+import {Phonic} from '../phonic.model';
 @Component({
   selector: 'app-phonic',
   templateUrl: './phonic.component.html',

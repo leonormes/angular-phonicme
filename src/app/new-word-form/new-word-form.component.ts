@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { Phonic } from "../phonic.model";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: 'app-new-word-form',
@@ -6,19 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-word-form.component.css']
 })
 export class NewWordFormComponent implements OnInit {
+    @Input() phonic: Phonic;
 
   constructor() { }
 
-  addWord(
-    word: HTMLInputElement,
-    file: HTMLInputElement,
-    meta: HTMLInputElement): boolean {
-    console.log(`Adding word: ${word.value} & ${file.value} & ${meta.value}`);
-    word.value = '';
-    file.value = '';
-    meta.value = '';
-    return false;
-  }
   ngOnInit() {
   }
 

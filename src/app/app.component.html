@@ -1,6 +1,4 @@
-<app-new-word-form></app-new-word-form>
-<br>
-<app-phonic
-*ngFor="let phonic of phonics"
-[phonic]="phonic"
-></app-phonic>
+<phonic-list
+[phonicList]="phonics"
+(onPhonicSelected)="phonicWasSelected($event)">
+</phonic-list>

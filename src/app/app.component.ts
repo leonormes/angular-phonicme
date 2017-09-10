@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Phonic } from './phonic/phonic.model';
+import { Component, EventEmitter } from '@angular/core';
+import { Phonic } from './phonic.model';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +16,9 @@ export class AppComponent {
       new Phonic('Dog', 'dog.mp3', 'phase 1'),
       new Phonic('Sun', 'sun.mp3', 'phase 1'),
     ];
+  }
+
+  phonicWasSelected(phonic: Phonic): void {
+    console.log('Phonic clicked: ', phonic);
   }
 }

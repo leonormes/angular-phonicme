@@ -6,12 +6,20 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PhonicComponent } from './phonic/phonic.component';
 import { NewWordFormComponent } from './new-word-form/new-word-form.component';
+import { PhonicsListComponent } from './phonics-list/phonics-list.component';
+import { PhonicRowComponent } from './phonic-row/phonic-row.component';
+import { PhonicWordComponent } from './phonic-word/phonic-word.component';
+import { PhonicAudioComponent } from './phonic-audio/phonic-audio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhonicComponent,
     NewWordFormComponent,
+    PhonicsListComponent,
+    PhonicRowComponent,
+    PhonicWordComponent,
+    PhonicAudioComponent,
   ],
   imports: [
     BrowserModule,
