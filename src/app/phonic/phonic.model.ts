@@ -3,9 +3,9 @@ export class Phonic {
   meta: string;
   file: string;
 
-  constructor(word: string, meta: string, file: string) {
+  constructor(word: string, file: string, meta: string) {
     this.word = word;
-    this.meta = meta;
     this.file = file;
+    this.meta = meta;
   }
 }
