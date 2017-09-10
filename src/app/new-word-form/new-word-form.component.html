@@ -1,24 +1,77 @@
+<div class="ui raised segment">
+  <h2 class="ui header">New Phonic:</h2>
 
-<form class="ui large form segment">
-  <h3 class="ui header">Add word</h3>
+  <form [formGroup]="wordForm"
+        (ngSubmit)="onSubmit(wordForm.value)"
+        class="ui form"
+        [class.error]="!wordForm.valid && wordForm.touched"
+        autocomplete="off"
+        >
 
-<div class="field">
-    <label for="word">Word:</label>
-    <input name="word" #newword>
+        <div class="field"
+          [class.error]="!word.valid && word.touched">
+          <label for="word">Word:</label>
+          <input type="text"
+          id="wordInput"
+          placeholder="New Word"
+          [formControl]="word">
+
+          <div *ngIf="!word.valid && word.touched"
+          class="ui error message">Word is not valid</div>
+        </div>
+
+        <div class="field"
+          [class.error]="!file.valid && file.touched">
+          <label for="file">File:</label>
+          <input type="text"
+          id="fileInput"
+          placeholder="File"
+          [formControl]="file">
+
+          <div *ngIf="!file.valid && file.touched"
+          class="ui error message">File is not valid</div>
+        </div>
+
+        <div class="field"
+          [class.error]="!meta.valid && meta.touched">
+          <label for="meta">Meta:</label>
+          <input type="text"
+          id="metaInput"
+          placeholder="Meta data for new word"
+          [formControl]="meta">
+
+          <div *ngIf="!meta.valid && meta.touched"
+          class="ui error message">Meta is not valid</div>
+        </div>
+
+
+        <div class="field"
+          [class.error]="!file.valid && file.touched">
+          <label for="file">File:</label>
+          <input type="text"
+          id="fileInput"
+          placeholder="File"
+          [formControl]="file">
+
+          <div *ngIf="!file.valid && file.touched"
+          class="ui error message">File is not valid</div>
+        </div>
+
+        <div class="field"
+          [class.error]="!meta.valid && meta.touched">
+          <label for="meta">Meta:</label>
+          <input type="text"
+          id="metaInput"
+          placeholder="Meta data for new word"
+          [formControl]="meta">
+
+          <div *ngIf="!meta.valid && meta.touched"
+          class="ui error message">Meta is not valid</div>
+        </div>
+
+        <button
+        type="submit"
+        class="ui button"
+        [disabled]='!wordForm.valid' >Submit</button>
+      </form>
 </div>
-
-<div class="field">
-  <label for="file">File:</label>
-  <input name="file" #newfile>
-</div>
-
-<div class="field">
-  <label for="meta">Meta:</label>
-  <input name="meta" #newmeta>
-</div>
-
-<button
-    class="ui positive right floated button">
-  Submit Word
-  </button>
-</form>
