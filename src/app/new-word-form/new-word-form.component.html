@@ -31,7 +31,36 @@
           <div *ngIf="!file.valid && file.touched"
           class="ui error message">File is not valid</div>
         </div>
+<<<<<<< HEAD
 
+=======
+
+        <div class="field"
+          [class.error]="!meta.valid && meta.touched">
+          <label for="meta">Meta:</label>
+          <input type="text"
+          id="metaInput"
+          placeholder="Meta data for new word"
+          [formControl]="meta">
+
+          <div *ngIf="!meta.valid && meta.touched"
+          class="ui error message">Meta is not valid</div>
+        </div>
+
+
+        <div class="field"
+          [class.error]="!file.valid && file.touched">
+          <label for="file">File:</label>
+          <input type="text"
+          id="fileInput"
+          placeholder="File"
+          [formControl]="file">
+
+          <div *ngIf="!file.valid && file.touched"
+          class="ui error message">File is not valid</div>
+        </div>
+
+>>>>>>> 8e3f6f7df70a9833e12f0731e66ecd1852341fe4
         <div class="field"
           [class.error]="!meta.valid && meta.touched">
           <label for="meta">Meta:</label>
