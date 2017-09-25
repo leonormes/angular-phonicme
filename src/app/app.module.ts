@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PhonicComponent } from './phonic/phonic.component';
@@ -11,7 +12,13 @@ import { PhonicRowComponent } from './phonic-row/phonic-row.component';
 import { PhonicWordComponent } from './phonic-word/phonic-word.component';
 import { PhonicAudioComponent } from './phonic-audio/phonic-audio.component';
 import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
+import { HomeComponent } from './home/home.component';
 
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'newword', component: NewWordFormComponent }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +29,14 @@ import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
     PhonicWordComponent,
     PhonicAudioComponent,
     PhonicMetaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
