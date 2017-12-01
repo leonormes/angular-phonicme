@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'new-word-form',
   templateUrl: './new-word-form.component.html',
   styleUrls: ['./new-word-form.component.css']

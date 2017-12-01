@@ -13,11 +13,13 @@ import { PhonicWordComponent } from './phonic-word/phonic-word.component';
 import { PhonicAudioComponent } from './phonic-audio/phonic-audio.component';
 import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
 import { HomeComponent } from './home/home.component';
+import { FlashcardHomeComponent } from './flashcard-home/flashcard-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'newword', component: NewWordFormComponent }
+  { path: 'newword', component: NewWordFormComponent },
+  { path: 'flashcard', component: FlashcardHomeComponent }
 ]
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ const routes: Routes = [
     PhonicWordComponent,
     PhonicAudioComponent,
     PhonicMetaComponent,
-    HomeComponent
+    HomeComponent,
+    FlashcardHomeComponent
   ],
   imports: [
     BrowserModule,
