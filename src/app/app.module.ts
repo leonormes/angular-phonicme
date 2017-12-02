@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule, routingComponents } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { PhonicComponent } from './phonic/phonic.component';
@@ -15,12 +16,6 @@ import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
 import { HomeComponent } from './home/home.component';
 import { FlashcardModule } from './flashcard/flashcard.module';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'newword', component: NewWordFormComponent },
-  { path: 'flashcard', component: FlashcardModule }
-]
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,16 +26,18 @@ const routes: Routes = [
     PhonicWordComponent,
     PhonicAudioComponent,
     PhonicMetaComponent,
-    HomeComponent,
+    AppComponent,
+    routingComponents,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
