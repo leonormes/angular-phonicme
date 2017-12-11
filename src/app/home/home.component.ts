@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Phonic } from '../phonic.model';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -31,11 +31,9 @@ export class HomeComponent implements OnInit {
       new Phonic('at', '../assets/audio/cat.mp3', 'phase 2'),
       new Phonic('his', '../assets/audio/cat.mp3', 'phase 2, tricky'),
       new Phonic('but', '../assets/audio/cat.mp3', 'phase 2'),
-      new Phonic('that', '../assets/audio/cat.mp3', 'phase 2'),
+      new Phonic('that', '../assets/audio/cat.mp3', 'phase 2')
     ];
-   }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {}
 }
