@@ -10,7 +10,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'newword', component: NewWordFormComponent },
-  { path: 'flashcards', component: FlashcardHomeComponent }
+  {
+    path: 'flashcards',
+    loadChildren: 'app/flashcard/flashcard.module#FlashcardModule'
+  }
 ];
 
 @NgModule({
