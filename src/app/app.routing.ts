@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewWordFormComponent } from './new-word-form/new-word-form.component';
 import { HomeComponent } from './home/home.component';
 import { FlashcardHomeComponent } from './flashcard/flashcard-home/flashcard-home.component';
+import { FlashcardModule } from './flashcard/flashcard.module';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,8 +14,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), FlashcardModule],
+  exports: [RouterModule, FlashcardModule]
 })
 export class AppRoutingModule {}
 
