@@ -1,11 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { WordRoutingModule } from './word-routing';
 import { WordHomeComponent } from './word-home/word-home.component';
+import { WordListComponent } from './word-list/word-list.component';
+import { WordComponent } from './word/word.component';
+import { WordRowComponent } from './word-row/word-row.component';
+import { WordMetaDataComponent } from './word-meta-data/word-meta-data.component';
 
 @NgModule({
-  imports: [
-    CommonModule
+  imports: [CommonModule, WordRoutingModule],
+  declarations: [
+    WordHomeComponent,
+    WordListComponent,
+    WordComponent,
+    WordRowComponent,
+    WordMetaDataComponent
   ],
-  declarations: [WordHomeComponent]
+  exports: [
+    WordHomeComponent,
+    WordListComponent,
+    WordComponent,
+    WordRowComponent,
+    WordMetaDataComponent
+  ]
 })
-export class WordModule { }
+export class WordModule {}

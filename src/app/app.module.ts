@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule, routingComponents } from './app.routing';
 
 import { AppComponent } from './app.component';
+import { WordHomeComponent } from './word/word-home/word-home.component';
 import { PhonicComponent } from './phonic/phonic.component';
 import { PhonicsListComponent } from './phonics-list/phonics-list.component';
 import { PhonicRowComponent } from './phonic-row/phonic-row.component';
