@@ -1,3 +1,6 @@
 <div class="ui items">
-  <app-word-row></app-word-row>
+  <app-word-row 
+  *ngFor='let word of WordList'
+  [word]='word'
+  ></app-word-row>
 </div>
