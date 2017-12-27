@@ -25,8 +25,7 @@ import { NewWordFormComponent } from './new-word-form/new-word-form.component';
     PhonicRowComponent,
     PhonicWordComponent,
     PhonicAudioComponent,
-    PhonicMetaComponent,
-    HomeComponent
+    PhonicMetaComponent
   ],
   imports: [
     BrowserModule,
