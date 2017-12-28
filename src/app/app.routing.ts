@@ -13,7 +13,7 @@ import { WordMetaDataComponent } from 'app/word/word-meta-data/word-meta-data.co
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
-  { path: 'word', loadChildren: 'app/word/word.module#WordModule' },
+  { path: 'words', loadChildren: 'app/word/word.module#WordModule' },
   { path: 'newword', component: NewWordFormComponent },
   {
     path: 'flashcards',
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), FlashcardModule],
+  imports: [RouterModule.forRoot(routes), FlashcardModule, WordModule],
   exports: [RouterModule, FlashcardModule, WordModule, HomeModule]
 })
 export class AppRoutingModule {}
