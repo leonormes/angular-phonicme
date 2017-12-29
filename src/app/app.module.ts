@@ -9,12 +9,9 @@ import { AppComponent } from './app.component';
 import { WordHomeComponent } from './word/word-home/word-home.component';
 import { PhonicComponent } from './phonic/phonic.component';
 import { PhonicsListComponent } from './phonics-list/phonics-list.component';
-import { PhonicRowComponent } from './phonic-row/phonic-row.component';
-import { PhonicWordComponent } from './phonic-word/phonic-word.component';
-import { PhonicAudioComponent } from './phonic-audio/phonic-audio.component';
 import { HomeComponent } from './home/home.component';
-import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
 import { NewWordFormComponent } from './new-word-form/new-word-form.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +19,7 @@ import { NewWordFormComponent } from './new-word-form/new-word-form.component';
     NewWordFormComponent,
     PhonicComponent,
     PhonicsListComponent,
-    PhonicRowComponent,
-    PhonicWordComponent,
-    PhonicAudioComponent,
-    PhonicMetaComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

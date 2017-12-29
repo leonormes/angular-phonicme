@@ -1,3 +1,4 @@
+import { PhonicComponent } from './phonic/phonic.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
   { path: 'words', loadChildren: 'app/word/word.module#WordModule' },
   { path: 'newword', component: NewWordFormComponent },
+  { path: 'phonics', component: PhonicComponent },
   {
     path: 'flashcards',
     loadChildren: 'app/flashcard/flashcard.module#FlashcardModule'
