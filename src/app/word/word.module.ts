@@ -1,4 +1,3 @@
-import { NewWordFormComponent } from "./new-word-form/new-word-form.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 

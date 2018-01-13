@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PhonicComponent } from './phonic.component';
+import { PhonicHomeComponent } from './phonic-home.component';
 
-describe('PhonicComponent', () => {
-  let component: PhonicComponent;
-  let fixture: ComponentFixture<PhonicComponent>;
+describe('PhonicHomeComponent', () => {
+  let component: PhonicHomeComponent;
+  let fixture: ComponentFixture<PhonicHomeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhonicComponent ]
+      declarations: [ PhonicHomeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhonicComponent);
+    fixture = TestBed.createComponent(PhonicHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

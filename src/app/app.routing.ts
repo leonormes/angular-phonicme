@@ -1,19 +1,16 @@
-import { PhonicComponent } from "./phonic/phonic.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { NewWordFormComponent } from "./new-word-form/new-word-form.component";
+import { PhonicModule } from "./phonic/phonic.module";
 import { FlashcardModule } from "./flashcard/flashcard.module";
 import { HomeModule } from "./home/home.module";
 import { WordModule } from "./word/word.module";
-import { WordMetaDataComponent } from "app/word/word-meta-data/word-meta-data.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", loadChildren: "app/home/home.module#HomeModule" },
   { path: "words", loadChildren: "app/word/word.module#WordModule" },
-  { path: "newword", component: NewWordFormComponent },
-  { path: "phonics", component: PhonicComponent },
+  { path: "phonics", loadChildren: "app/phonic/phonic.module#PhonicModule" },
   {
     path: "flashcards",
     loadChildren: "app/flashcard/flashcard.module#FlashcardModule"
@@ -21,9 +18,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), FlashcardModule, WordModule],
-  exports: [RouterModule, FlashcardModule, WordModule, HomeModule]
+  imports: [
+    RouterModule.forRoot(routes),
+    FlashcardModule,
+    PhonicModule,
+    WordModule
+  ],
+  exports: [RouterModule, FlashcardModule, WordModule, PhonicModule, HomeModule]
 })
 export class AppRoutingModule {}
 
-export const routingComponents = [NewWordFormComponent];
+export const routingComponents = [];

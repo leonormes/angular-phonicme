@@ -7,20 +7,15 @@ import { AppRoutingModule, routingComponents } from "./app.routing";
 
 import { AppComponent } from "./app.component";
 import { WordModule } from "./word/word.module";
-import { PhonicComponent } from "./phonic/phonic.component";
+import { PhonicModule } from "./phonic/phonic.module";
 import { HomeComponent } from "./home/home.component";
-import { NewWordFormComponent } from "./new-word-form/new-word-form.component";
 import { NavigationComponent } from "./navigation/navigation.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NewWordFormComponent,
-    PhonicComponent,
-    NavigationComponent
-  ],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     BrowserModule,
+    PhonicModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
