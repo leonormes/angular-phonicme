@@ -1,4 +1,11 @@
-<ul>
-  <li id={{phonicScheme.uuid}} (click)="onSelectScheme($event)">Scheme: {{phonicScheme.name}}
-  </li>
-</ul>
+<div class="content">
+  <div class="header">
+    {{phonicScheme.name}}
+  </div>
+  <div class="description">
+    {{phonicScheme.description}}
+  </div>
+</div>
+<div class="extra content">
+  <div class="ui one buttons">
+    <div class="ui button" id={{phonicScheme.uuid}} (click)="onSelectScheme($event)">Select</div>

@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
-  selector: "app-phonic-home",
-  templateUrl: "./phonic-home.component.html",
-  styleUrls: ["./phonic-home.component.css"]
+  selector: 'app-phonic-home',
+  templateUrl: './phonic-home.component.html',
+  styleUrls: ['./phonic-home.component.css']
 })
 export class PhonicHomeComponent implements OnInit {
   constructor() {}

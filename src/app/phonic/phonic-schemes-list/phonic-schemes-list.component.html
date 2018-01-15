@@ -1,4 +1,4 @@
 <div>Please choose the scheme you use to teach phonics</div>
-<div *ngFor="let scheme of phonicSchemesList">
-  <app-phonic-scheme-item [phonicScheme]="scheme"></app-phonic-scheme-item>
+<div class="ui cards">
+  <app-phonic-scheme-item class="card" *ngFor="let scheme of phonicSchemesList" [phonicScheme]="scheme"></app-phonic-scheme-item>
 </div>
