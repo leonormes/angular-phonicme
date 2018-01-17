@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-phonic-scheme-item',
   templateUrl: './phonic-scheme-item.component.html',
@@ -13,6 +12,6 @@ export class PhonicSchemeItemComponent implements OnInit {
   ngOnInit() {}
 
   onSelectScheme(event) {
-    console.log(event.target.parentNode.parentNode);
+    console.log(event.target.id);
   }
 }

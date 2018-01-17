@@ -25,7 +25,7 @@
     "apollo-cache-inmemory": "^1.1.4",
     "apollo-client": "^2.0.4",
     "core-js": "^2.5.1",
-    "graphql": "^0.12.3",
+    "graphql": "^0.11.7",
     "graphql-tag": "^2.6.0",
     "rxjs": "^5.5.3",
     "zone.js": "^0.8.18"
@@ -48,6 +48,7 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.8.0",
     "tslint-config-prettier": "^1.6.0",
-    "typescript": "^2.6.2"
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.4.2"
   }
 }
