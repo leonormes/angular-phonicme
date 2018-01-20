@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Apollo } from "apollo-angular";
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/operator/map";
-import gql from "graphql-tag";
+import 'rxjs/add/operator/map';
+
+import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
 
 const PhonicSchemesList = gql`
   query PhonicsSchemeQuery {
@@ -15,9 +15,9 @@ const PhonicSchemesList = gql`
 `;
 
 @Component({
-  selector: "app-phonic-schemes-list",
-  templateUrl: "./phonic-schemes-list.component.html",
-  styleUrls: ["./phonic-schemes-list.component.css"]
+  selector: 'app-phonic-schemes-list',
+  templateUrl: './phonic-schemes-list.component.html',
+  styleUrls: ['./phonic-schemes-list.component.css']
 })
 export class PhonicSchemesListComponent implements OnInit {
   loading: boolean;

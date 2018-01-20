@@ -1,8 +1,10 @@
 {
-  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "extends": ["tslint:latest", "tslint-config-prettier", "rxjs-tslint-rules"],
   "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
     "callable-types": true,
+    "rxjs-add": { "severity": "error" },
+    "rxjs-no-unused-add": { "severity": "error" },
     "class-name": true,
     "comment-format": [true, "check-space"],
     "curly": true,
@@ -33,6 +35,7 @@
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
+    "no-submodule-imports": [true, "rxjs"],
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
