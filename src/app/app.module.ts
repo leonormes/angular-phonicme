@@ -1,35 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { RouterModule, Routes } from "@angular/router";
+import { AppRoutingModule, routingComponents } from "./app.routing";
+import { AuthGuard } from "./authentication/auth.guard";
+import { AuthService } from "./authentication/auth.service";
+import { CallbackComponent } from "./authentication/auth.callback";
 
-import { AppComponent } from './app.component';
-import { PhonicComponent } from './phonic/phonic.component';
-import { NewWordFormComponent } from './new-word-form/new-word-form.component';
-import { PhonicsListComponent } from './phonics-list/phonics-list.component';
-import { PhonicRowComponent } from './phonic-row/phonic-row.component';
-import { PhonicWordComponent } from './phonic-word/phonic-word.component';
-import { PhonicAudioComponent } from './phonic-audio/phonic-audio.component';
-import { PhonicMetaComponent } from './phonic-meta/phonic-meta.component';
+import { AppComponent } from "./app.component";
+import { WordModule } from "./word/word.module";
+import { PhonicModule } from "./phonic/phonic.module";
+import { HomeComponent } from "./home/home.component";
+import { NavigationComponent } from "./navigation/navigation.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PhonicComponent,
-    NewWordFormComponent,
-    PhonicsListComponent,
-    PhonicRowComponent,
-    PhonicWordComponent,
-    PhonicAudioComponent,
-    PhonicMetaComponent,
-  ],
+  declarations: [AppComponent, CallbackComponent, NavigationComponent],
   imports: [
     BrowserModule,
+    PhonicModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ AuthGuard, AuthService ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,8 @@
+<div class="ui tabular menu">
+  <a [routerLink]="['/home']" class="item">PhonicMe</a>
+  <a [routerLink]="['/home']" class="item" routerLinkActive="active">Home</a>
+  <a *ngIf="authService.authenticated" [routerLink]="['/words']" class="item" routerLinkActive="active">Words</a>
+  <a *ngIf="authService.authenticated" [routerLink]="['/phonics']" class="item" routerLinkActive="active">phonics</a>
+  <a *ngIf="!authService.authenticated" (click)="authService.login()" class="item" routerLinkActive="active">Log In</a>
+  <a *ngIf="authService.authenticated" (click)="authService.logout()" class="item" routerLinkActive="active">Log Out</a>
+</div>
