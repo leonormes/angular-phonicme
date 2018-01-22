@@ -1,5 +1,6 @@
+import { Component, Input, OnInit } from '@angular/core';
+
 import { UserService } from './../../sevices/user.service';
-import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-phonic-scheme-item',
@@ -13,13 +14,13 @@ export class PhonicSchemeItemComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    if(this.userService.phonicSchemeId) {
-      console.log('ID SET!!')
+    if (this.userService.phonicSchemeId) {
+      console.log('ID SET!!');
     }
   }
 
   onSelectScheme(event) {
-    this.userService.setPhonicScheme(event.target.id)
+    this.userService.setPhonicScheme(event.target.id);
     console.log('scheme set to:' + this.userService.getPhonicSchemeId());
   }
 }
