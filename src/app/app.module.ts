@@ -1,11 +1,12 @@
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ApolloModule } from 'apollo-angular';
-import { HttpLinkModule } from 'apollo-angular-link-http';
+import { Apollo, ApolloModule } from 'apollo-angular';
+import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
@@ -16,7 +17,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { PhonicModule } from './phonic/phonic.module';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, PageNotFoundComponent],
+  declarations: [AppComponent, CallbackComponent, NavigationComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     PhonicModule,
