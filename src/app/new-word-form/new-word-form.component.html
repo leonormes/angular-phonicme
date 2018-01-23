@@ -1,0 +1,25 @@
+<div class="ui raised segment">
+  <h2 class="ui header">New Phonic:</h2>
+
+  <form [formGroup]="wordForm"
+        (ngSubmit)="onSubmit(wordForm.value)"
+        class="ui form"
+        [class.error]="!wordForm.valid && wordForm.touched" >
+
+        <div class="field"
+          [class.error]="!word.valid && word.touched">
+          <label for="word">Word:</label>
+          <input type="text"
+          id="wordInput"
+          placeholder="New Word"
+          [formControl]="word">
+
+          <div *ngIf="!word.valid"
+          class="ui error message">Word is not valid</div>
+        </div>
+        <div *ngIf="!wordForm.valid"
+        class="ui error message">Form is not valid</div>
+
+        <button type="submit" class="ui button">Submit</button>
+      </form>
+</div>
