@@ -1,20 +1,18 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { PhonicModule } from "./phonic/phonic.module";
-import { FlashcardModule } from "./flashcard/flashcard.module";
-import { HomeModule } from "./home/home.module";
-import { WordModule } from "./word/word.module";
+import { FlashcardModule } from './flashcard/flashcard.module';
+import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PhonicModule } from './phonic/phonic.module';
+import { WordModule } from './word/word.module';
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", loadChildren: "app/home/home.module#HomeModule" },
-  { path: "words", loadChildren: "app/word/word.module#WordModule" },
-  { path: "phonics", loadChildren: "app/phonic/phonic.module#PhonicModule" },
-  {
-    path: "flashcards",
-    loadChildren: "app/flashcard/flashcard.module#FlashcardModule"
-  }
+  { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
+  { path: 'words', loadChildren: 'app/word/word.module#WordModule' },
+  { path: 'phonics', loadChildren: 'app/phonic/phonic.module#PhonicModule' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -27,5 +25,3 @@ const routes: Routes = [
   exports: [RouterModule, FlashcardModule, WordModule, PhonicModule, HomeModule]
 })
 export class AppRoutingModule {}
-
-export const routingComponents = [];

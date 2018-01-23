@@ -1,4 +1,18 @@
+import 'rxjs/add/operator/map';
+
 import { Component, OnInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import gql from 'graphql-tag';
+
+const PhonicSchemesList = gql`
+  query PhonicsSchemeQuery {
+    phonicSchemes {
+      uuid
+      name
+      description
+    }
+  }
+`;
 
 @Component({
   selector: 'app-phonic-schemes-list',
@@ -6,10 +20,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phonic-schemes-list.component.css']
 })
 export class PhonicSchemesListComponent implements OnInit {
+  loading: boolean;
+  phonicSchemesList: any;
 
-  constructor() { }
+  constructor(private apollo: Apollo) {}
 
   ngOnInit() {
+    this.apollo
+      .watchQuery<any>({
+        query: PhonicSchemesList
+      })
+      .valueChanges.subscribe(({ data }) => {
+        this.loading = data.loading;
+        this.phonicSchemesList = data.phonicSchemes;
+      });
   }
-
 }
