@@ -3,10 +3,11 @@ import { Routes, RouterModule, CanActivate } from "@angular/router";
 import { AuthGuard } from "./authentication/auth.guard";
 import { CallbackComponent } from './authentication/auth.callback';
 
-import { PhonicModule } from "./phonic/phonic.module";
-import { FlashcardModule } from "./flashcard/flashcard.module";
-import { HomeModule } from "./home/home.module";
-import { WordModule } from "./word/word.module";
+import { FlashcardModule } from './flashcard/flashcard.module';
+import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PhonicModule } from './phonic/phonic.module';
+import { WordModule } from './word/word.module';
 
 const routes: Routes = [
   {
