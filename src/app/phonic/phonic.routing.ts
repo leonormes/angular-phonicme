@@ -1,8 +1,12 @@
-import { NgModule } from "@angular/core";
-import { PhonicHomeComponent } from "./phonic-home/phonic-home.component";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../authentication/auth.guard';
 
-const routes: Routes = [{ path: "phonics", component: PhonicHomeComponent }];
+import { PhonicHomeComponent } from './phonic-home/phonic-home.component';
+
+const routes: Routes = [
+  { path: 'phonics', component: PhonicHomeComponent, canActivate: [AuthGuard] }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
