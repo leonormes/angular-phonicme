@@ -1,6 +1,7 @@
-import { Component, EventEmitter } from '@angular/core';
-import { Phonic } from './phonic.model';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Phonic } from './phonic.model';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   phonics: Phonic[];
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   phonicWasSelected(phonic: Phonic): void {
     console.log('Phonic clicked: ', phonic);

@@ -7,7 +7,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class AuthService {
-
   auth0 = new auth0.WebAuth({
     clientID: 'QIgnIw6TmckZsGiHyd9X3unzhQSiNFri',
     domain: 'fifthmorrison.eu.auth0.com',
@@ -31,7 +30,7 @@ export class AuthService {
       this.userProfile = JSON.parse(localStorage.getItem('profile'));
       this.setLoggedIn(true);
     } else {
-      //this.logout();
+      // this.logout();
     }
   }
 
@@ -55,7 +54,7 @@ export class AuthService {
         console.error(`Error: ${err.error}`);
       }
 
-      this.router.navigate(['/words']);
+      this.router.navigate(['/home']);
     });
   }
 
@@ -98,5 +97,4 @@ export class AuthService {
 
     return Date.now() < expiresAt;
   }
-
 }
