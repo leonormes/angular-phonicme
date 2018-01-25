@@ -5,15 +5,11 @@ import { CallbackComponent } from './authentication/auth.callback';
 import { AuthGuard } from './authentication/auth.guard';
 import { FlashcardModule } from './flashcard/flashcard.module';
 import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PhonicModule } from './phonic/phonic.module';
 import { WordModule } from './word/word.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
   {
     path: 'home',
     loadChildren: 'app/home/home.module#HomeModule'
@@ -33,7 +29,13 @@ const routes: Routes = [
   {
     path: 'callback',
     component: CallbackComponent
-  }
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
