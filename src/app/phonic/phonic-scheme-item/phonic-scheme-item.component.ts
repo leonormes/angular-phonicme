@@ -8,16 +8,11 @@ import { UserService } from './../../sevices/user.service';
   styleUrls: ['./phonic-scheme-item.component.css']
 })
 export class PhonicSchemeItemComponent implements OnInit {
-  phonicSchemeId: any;
   @Input() phonicScheme: any;
 
   constructor(private userService: UserService) {}
 
-  ngOnInit() {
-    if (this.userService.phonicSchemeId) {
-      console.log('ID SET!!');
-    }
-  }
+  ngOnInit() {}
 
   onSelectScheme(event) {
     this.userService.setPhonicScheme(event.target.id);
