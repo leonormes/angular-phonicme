@@ -1,1 +1,6 @@
-<app-phonic-schemes-list class="ui two column stackable container"></app-phonic-schemes-list>
+<div *ngIf="!phonicSchemeId; else cardSet">
+  <app-phonic-schemes-list class="ui two column stackable container"></app-phonic-schemes-list>
+</div>
+<ng-template #cardSet>
+  <app-phonic-card-sets></app-phonic-card-sets>
+</ng-template>
