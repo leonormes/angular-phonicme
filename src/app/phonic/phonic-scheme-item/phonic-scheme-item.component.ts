@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService } from './../../sevices/user.service';
 
@@ -10,12 +11,12 @@ import { UserService } from './../../sevices/user.service';
 export class PhonicSchemeItemComponent implements OnInit {
   @Input() phonicScheme: any;
 
-  constructor(private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {}
 
-  onSelectScheme(event) {
-    this.userService.setPhonicScheme(event.target.id);
-    console.log('scheme set to:' + this.userService.getPhonicSchemeId());
+  onSelectScheme(uuid) {
+    this.userService.setPhonicScheme(uuid);
+    this.router.navigate(['cardSets', this.userService.getPhonicSchemeId()]);
   }
 }

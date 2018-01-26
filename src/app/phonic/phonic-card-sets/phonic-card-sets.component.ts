@@ -1,8 +1,10 @@
 import 'rxjs/add/operator/map';
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
+
 import { UserService } from './../../sevices/user.service';
 
 const cardSetsQuery = gql`
@@ -33,14 +35,19 @@ const cardSetsQuery = gql`
 export class PhonicCardSetsComponent implements OnInit {
   loading: boolean;
   cardSetList: any;
-  constructor(private apollo: Apollo, private userService: UserService) {}
+  schemeId: any = this.activeRoute.snapshot.params['id'];
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private apollo: Apollo,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     this.apollo
       .watchQuery<any>({
         query: cardSetsQuery,
         variables: {
-          schemeChoice: this.userService.getPhonicSchemeId()
+          schemeChoice: this.schemeId
         }
       })
       .valueChanges.subscribe(({ data }) => {

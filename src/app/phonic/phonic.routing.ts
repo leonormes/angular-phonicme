@@ -14,7 +14,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'cardsets/:id',
+    path: 'cardSets/:id',
     component: PhonicCardSetsComponent,
     canActivate: [AuthGuard]
   }
