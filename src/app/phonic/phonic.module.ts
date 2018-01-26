@@ -6,6 +6,7 @@ import { PhonicSchemesListComponent } from "./phonic-schemes-list/phonic-schemes
 import { PhonicHomeComponent } from "./phonic-home/phonic-home.component";
 import { PhonicRoutingModule } from "app/phonic/phonic.routing";
 import { PhonicCardSetsComponent } from './phonic-card-sets/phonic-card-sets.component';
+import { PhonicCardSetItemComponent } from './phonic-card-set-item/phonic-card-set-item.component';
 
 @NgModule({
   imports: [CommonModule, PhonicRoutingModule],
@@ -13,7 +14,8 @@ import { PhonicCardSetsComponent } from './phonic-card-sets/phonic-card-sets.com
     PhonicSchemeItemComponent,
     PhonicSchemesListComponent,
     PhonicHomeComponent,
-    PhonicCardSetsComponent
+    PhonicCardSetsComponent,
+    PhonicCardSetItemComponent
   ],
   providers: [
   UserService

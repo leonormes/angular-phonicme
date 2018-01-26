@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router/';
 
 import { UserService } from './../../sevices/user.service';
+
 @Component({
   selector: 'app-phonic-home',
   templateUrl: './phonic-home.component.html',
@@ -8,9 +10,15 @@ import { UserService } from './../../sevices/user.service';
 })
 export class PhonicHomeComponent implements OnInit {
   phonicSchemeId: any;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.phonicSchemeId = userService.getPhonicSchemeId();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.phonicSchemeId) {
+      this.router.navigate(['cardSets', this.phonicSchemeId]);
+    } else {
+      this.router.navigate(['schemeChoice']);
+    }
+  }
 }

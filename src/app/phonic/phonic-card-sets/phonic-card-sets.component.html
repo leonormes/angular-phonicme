@@ -1,8 +1,3 @@
-<p>
-  phonic-card-sets works!
-</p>
 <div class="ui cards">
-  <div *ngFor="let set of cardSetList">
-    {{set.name}}
-  </div>
+  <app-phonic-card-set-item class="card" *ngFor="let cardSet of cardSetList" [cardSet]="cardSet"></app-phonic-card-set-item>
 </div>

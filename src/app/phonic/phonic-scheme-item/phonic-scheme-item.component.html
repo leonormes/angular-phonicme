@@ -8,4 +8,6 @@
 </div>
 <div class="extra content">
   <div class="ui one buttons">
-    <div class="ui button" id={{phonicScheme.uuid}} (click)="onSelectScheme($event)">Select</div>
+    <div class="ui button" id={{phonicScheme.uuid}} (click)="onSelectScheme($event)">
+      <a [routerLink]="['/cardSets', phonicScheme.uuid]">Select</a>
+    </div>

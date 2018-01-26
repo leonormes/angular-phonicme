@@ -10,6 +10,10 @@ const cardSetsQuery = gql`
     cardSets(phonicSchemeUuid: $schemeChoice) {
       name
       uuid
+      order
+      phonicScheme {
+        name
+      }
       flashcards {
         order
         uuid
