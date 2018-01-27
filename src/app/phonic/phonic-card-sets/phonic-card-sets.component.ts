@@ -43,6 +43,7 @@ export class PhonicCardSetsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log(this.schemeId);
     this.apollo
       .watchQuery<any>({
         query: cardSetsQuery,

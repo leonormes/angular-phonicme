@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PhonicSchemesListComponent } from './phonic-schemes-list/phonic-schemes-list.component';
 
 import { AuthGuard } from '../authentication/auth.guard';
+import { FlashcardHomeComponent } from '../shared/flashcard/flashcard-home/flashcard-home.component';
 import { PhonicCardSetsComponent } from './phonic-card-sets/phonic-card-sets.component';
 import { PhonicHomeComponent } from './phonic-home/phonic-home.component';
 
@@ -16,6 +17,12 @@ const routes: Routes = [
   {
     path: 'cardSets/:id',
     component: PhonicCardSetsComponent,
+    children: [
+      {
+        path: 'flashcards',
+        component: FlashcardHomeComponent
+      }
+    ],
     canActivate: [AuthGuard]
   }
 ];

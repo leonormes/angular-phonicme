@@ -34,7 +34,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), PhonicModule, WordModule],
+  imports: [
+    RouterModule.forRoot(routes, { enableTracing: true }),
+    PhonicModule,
+    WordModule
+  ],
   providers: [AuthGuard],
   exports: [RouterModule, WordModule, PhonicModule, HomeModule]
 })

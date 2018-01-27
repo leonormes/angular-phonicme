@@ -12,7 +12,7 @@ export class PhonicCardSetItemComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSelectSet(event) {
-    console.log(event);
+  onSelectSet(uuid) {
+    console.log(uuid);
   }
 }
