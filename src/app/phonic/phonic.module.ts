@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { PhonicRoutingModule } from './phonic.routing';
+
 import { UserService } from './../sevices/user.service';
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { PhonicSchemeItemComponent } from "./phonic-scheme-item/phonic-scheme-item.component";
-import { PhonicSchemesListComponent } from "./phonic-schemes-list/phonic-schemes-list.component";
-import { PhonicHomeComponent } from "./phonic-home/phonic-home.component";
-import { PhonicRoutingModule } from "app/phonic/phonic.routing";
-import { PhonicCardSetsComponent } from './phonic-card-sets/phonic-card-sets.component';
 import { PhonicCardSetItemComponent } from './phonic-card-set-item/phonic-card-set-item.component';
+import { PhonicCardSetsComponent } from './phonic-card-sets/phonic-card-sets.component';
+import { PhonicHomeComponent } from './phonic-home/phonic-home.component';
+import { PhonicSchemeItemComponent } from './phonic-scheme-item/phonic-scheme-item.component';
+import { PhonicSchemesListComponent } from './phonic-schemes-list/phonic-schemes-list.component';
 
 @NgModule({
   imports: [CommonModule, PhonicRoutingModule],
@@ -17,8 +18,6 @@ import { PhonicCardSetItemComponent } from './phonic-card-set-item/phonic-card-s
     PhonicCardSetsComponent,
     PhonicCardSetItemComponent
   ],
-  providers: [
-  UserService
-  ]
+  providers: [UserService]
 })
 export class PhonicModule {}

@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CallbackComponent } from './authentication/auth.callback';
 import { AuthGuard } from './authentication/auth.guard';
-import { FlashcardModule } from './flashcard/flashcard.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PhonicModule } from './phonic/phonic.module';
@@ -23,10 +22,6 @@ const routes: Routes = [
     loadChildren: 'app/phonic/phonic.module#PhonicModule'
   },
   {
-    path: 'flashcards',
-    loadChildren: 'app/flashcard/flashcard.module#FlashcardModule'
-  },
-  {
     path: 'callback',
     component: CallbackComponent
   },
@@ -39,14 +34,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-    FlashcardModule,
-    PhonicModule,
-    WordModule
-  ],
+  imports: [RouterModule.forRoot(routes), PhonicModule, WordModule],
   providers: [AuthGuard],
-  exports: [RouterModule, FlashcardModule, WordModule, PhonicModule, HomeModule]
+  exports: [RouterModule, WordModule, PhonicModule, HomeModule]
 })
 export class AppRoutingModule {}
 

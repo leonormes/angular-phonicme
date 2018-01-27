@@ -25,7 +25,6 @@ export class AuthService {
   constructor(public router: Router) {
     // If authenticated, set local profile property and update login status subject
     // If token is expired, log out to clear any data from localStorage
-    console.log(this.authenticated);
     if (this.authenticated) {
       this.userProfile = JSON.parse(localStorage.getItem('profile'));
       this.setLoggedIn(true);
