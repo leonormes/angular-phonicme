@@ -9,5 +9,5 @@
 <div class="extra content">
   <div class="ui one buttons">
     <div class="ui button" id={{cardSet.uuid}} (click)="onSelectSet(cardSet.uuid)">
-      <a [routerLink]="['flashcards']">Select</a>
+      <a [routerLink]="['flashcards', cardSet.uuid]">Select</a>
     </div>

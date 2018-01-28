@@ -17,12 +17,11 @@ const routes: Routes = [
   {
     path: 'cardSets/:id',
     component: PhonicCardSetsComponent,
-    children: [
-      {
-        path: 'flashcards',
-        component: FlashcardHomeComponent
-      }
-    ],
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'cardSets/:id/flashcards/:id',
+    component: FlashcardHomeComponent,
     canActivate: [AuthGuard]
   }
 ];
