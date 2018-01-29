@@ -35,7 +35,7 @@ const cardSetsQuery = gql`
 export class PhonicCardSetsComponent implements OnInit {
   loading: boolean;
   cardSetList: any;
-  schemeId: any = this.activeRoute.snapshot.params['id'];
+  schemeId: any = this.activeRoute.snapshot.params['setId'];
   constructor(
     private activeRoute: ActivatedRoute,
     private apollo: Apollo,
@@ -43,7 +43,6 @@ export class PhonicCardSetsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.schemeId);
     this.apollo
       .watchQuery<any>({
         query: cardSetsQuery,

@@ -15,12 +15,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'cardSets/:id',
+    path: 'cardSets/:setId',
     component: PhonicCardSetsComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'cardSets/:id/flashcards/:id',
+    path: 'cardSets/:setId/flashcards/:cardId',
     component: FlashcardHomeComponent,
     canActivate: [AuthGuard]
   }
