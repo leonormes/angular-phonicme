@@ -7,6 +7,7 @@ import { FlashcardComponent } from './flashcard/flashcard.component';
 
 @NgModule({
   imports: [CommonModule, FlashcardRoutingModule],
-  declarations: [FlashcardHomeComponent, FlashcardComponent]
+  declarations: [FlashcardHomeComponent, FlashcardComponent],
+  exports: [FlashcardHomeComponent]
 })
 export class FlashcardModule {}
