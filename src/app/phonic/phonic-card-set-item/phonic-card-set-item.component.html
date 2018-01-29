@@ -8,6 +8,6 @@
 </div>
 <div class="extra content">
   <div class="ui one buttons">
-    <div class="ui button" id={{cardSet.uuid}} (click)="onSelectSet($event)">
-      <a [routerLink]="['/cardSets',cardSet.uuid]">Select</a>
+    <div class="ui button" id={{cardSet.uuid}} (click)="onSelectSet(cardSet.uuid)">
+      <a [routerLink]="['phonicCard', cardSet.uuid]">Select</a>
     </div>
